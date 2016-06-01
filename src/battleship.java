@@ -13,13 +13,20 @@ public class battleship {
     public String checkLocation(String stringGuess) {
         int guess = Integer.parseInt(stringGuess);
 
-        String result = "miss";
-        for (int cell:locations) {
+        String result = "Miss!";
+        for (int cell:this.locations) {
             if (guess == cell) {
-                result = "hit";
+                result = "Hit!";
                 numOfHits++;
                 break;
             }
         }
+
+        if (numOfHits == this.locations.length) {
+            result = "You sunk a Battleship!";
+        }
+        System.out.println(result);
+
+        return result;
     }
 }
