@@ -10,8 +10,8 @@ public class battleship {
         this.locations = locations;
     }
 
-    public String checkLocation(String stringGuess) {
-        int guess = Integer.parseInt(stringGuess);
+    public String checkLocation(int stringGuess) {
+        int guess = stringGuess;
 
         String result = "Miss!";
         for (int cell:this.locations) {
