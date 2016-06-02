@@ -14,13 +14,16 @@ public class battleshipTest {
         b.setLocations(locations);
 
         Scanner reader = new Scanner(System.in);
-        String result = "Miss!";
+        Boolean isNotSunk = true;
 
-        while (result != "You sunk a Battleship!") {
+        while (isNotSunk) {
             System.out.println("Enter a Guess!");
             int userGuess = reader.nextInt();
-            result = b.checkLocation(userGuess);
+            String result = b.checkLocation(userGuess);
             numOfGuesses += 1;
+            if (result.equals("You sunk a Battleship!")) {
+                isNotSunk = false;
+            }
         }
         System.out.println("You took " + numOfGuesses + " guesses.");
 
