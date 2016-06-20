@@ -1,30 +1,33 @@
+import java.util.ArrayList;
+
 /**
  * Created by dna on 6/1/16.
  */
 public class battleship {
 
-    private int[] locations;
+    private ArrayList<String> locations;
     private int numOfHits = 0;
 
-    public void setLocations(int[] locations) {
+    public void setLocations(ArrayList<String> locations) {
         this.locations = locations;
     }
 
-    public String checkLocation(int stringGuess) {
-        int guess = stringGuess;
-
+    public String checkLocation(String stringGuess) {
         String result = "Miss!";
-        for (int cell:this.locations) {
-            if (guess == cell) {
+
+        int idx = this.locations.indexOf(stringGuess);
+        if (idx >= 0) {
+            this.locations.remove(idx);
+
+            if (this.locations.isEmpty()) {
+                result = "You sunk a Battleship!";
+            }
+            else {
                 result = "Hit!";
                 numOfHits++;
-                break;
             }
         }
 
-        if (numOfHits == this.locations.length) {
-            result = "You sunk a Battleship!";
-        }
         System.out.println(result);
 
         return result;

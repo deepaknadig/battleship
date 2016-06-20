@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -8,17 +9,23 @@ public class battleshipTest {
         int numOfGuesses = 0;
 
         int randomNumber = (int) (5*Math.random());
-        int[] locations = {randomNumber, randomNumber+1,randomNumber+2};
+        ArrayList<String> locations = new ArrayList<String>();
+        for (int i = 0; i < 3; i++) {
+            locations.add(Integer.toString(randomNumber));
+            randomNumber++;
+        }
 
         battleship b = new battleship();
         b.setLocations(locations);
+
+        GameHelper helper = new GameHelper();
 
         Scanner reader = new Scanner(System.in);
         Boolean isNotSunk = true;
 
         while (isNotSunk) {
-            System.out.println("Enter a Guess!");
-            int userGuess = reader.nextInt();
+            String userGuess = helper.getInput("Enter a guess:");
+
             String result = b.checkLocation(userGuess);
             numOfGuesses += 1;
             if (result.equals("You sunk a Battleship!")) {
