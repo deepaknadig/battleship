@@ -6,10 +6,15 @@ import java.util.ArrayList;
 public class battleship {
 
     private ArrayList<String> locations;
+    private String name;
     private int numOfHits = 0;
 
     public void setLocations(ArrayList<String> locations) {
         this.locations = locations;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String checkLocation(String stringGuess) {
@@ -20,7 +25,7 @@ public class battleship {
             this.locations.remove(idx);
 
             if (this.locations.isEmpty()) {
-                result = "You sunk a Battleship!";
+                result = "You sunk a the Battleship " + name + "!";
             }
             else {
                 result = "Hit!";

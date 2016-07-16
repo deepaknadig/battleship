@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * Created by dna on 6/2/16.
@@ -24,5 +25,8 @@ public class GameHelper {
         }
 
         return input;
+    }
+
+    public ArrayList<String> placeBattleships(int i) {
     }
 }
