@@ -25,7 +25,8 @@ public class battleship {
             this.locations.remove(idx);
 
             if (this.locations.isEmpty()) {
-                result = "You sunk a the Battleship " + name + "!";
+                result = "Kill";
+                System.out.println("You sunk a the Battleship " + name + "!");
             }
             else {
                 result = "Hit!";
@@ -33,8 +34,12 @@ public class battleship {
             }
         }
 
-        System.out.println(result);
+//        System.out.println(result);
 
         return result;
+    }
+
+    public String getName() {
+        return name;
     }
 }

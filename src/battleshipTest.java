@@ -31,7 +31,7 @@ public class battleshipTest {
         battleshipArrayList.add(third);
 
         System.out.print("To win the game you must sink all three Battle Ships namely: ");
-        System.out.println("REPLACE THIS");
+        System.out.println(first.getName() + ", " + second.getName() + ", and " + third.getName());
         System.out.println("You goal is to sink all the Battle Ships in the minimum number of Guesses.");
 
         for (battleship bs : battleshipArrayList) {
@@ -57,7 +57,7 @@ public class battleshipTest {
             if (result.equals("Hit")) {
                 break;
             }
-            if (result.equals("Hit")) {
+            if (result.equals("Kill")) {
                 battleshipArrayList.remove(bs);
                 break;
             }
